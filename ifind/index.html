@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ifind</title>
+    <title>iFind</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="https://blackrockdigital.github.io/startbootstrap-shop-item/css/bootstrap.min.css" rel="stylesheet">
@@ -25,6 +25,21 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+	<script>
+	function loadDoc() {
+		var mb = document.getElementById("mabai").value;
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (xhttp.readyState == 4 && xhttp.status == 200) {
+				document.getElementById("noidungdebai").src = xhttp.responseText;
+			}
+	  }
+	  if (mb != ""){
+		xhttp.open("GET", "a.txt", true);
+		xhttp.send();
+	  }
+	}
+	</script>
 </head>
 
 <body>
@@ -40,12 +55,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">ifind</a>
+                <a class="navbar-brand" href="index.html">iFind</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                   
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -59,13 +74,13 @@
         <div class="row">
 
             <div class="col-md-3">
-                <p class="lead">Search here</p>
+                <p class="lead">Search Here</p>
                 <div class="list-group">
-                    <div class="input-group">
-						<input type="text" class="form-control" placeholder="Search for...">
-						<span class="input-group-btn">
-						<button class="btn btn-default" type="button" id="btnsearch">Go!</button>
-						</span>
+					<div class="input-group">
+					  <input type="text" class="form-control" placeholder="Search for..." id="mabai">
+					  <span class="input-group-btn">
+						<button class="btn btn-default" type="button" id="btnsearch" onclick="loadDoc()" >Go!</button>
+					  </span>
 					</div><!-- /input-group -->
                 </div>
             </div>
@@ -73,28 +88,20 @@
             <div class="col-md-9">
 
                 <div class="thumbnail">
-                
                     <div class="caption-full">
-         
                         <h4>Tieu de de o day
                         </h4>
-                  <iframe id="noidungdebai">
+						<iframe src="http://www.w3schools.com" id="noidungdebai"></iframe>
                     </div>
-                    
                 </div>
 
                 <div class="well">
 
                     <div class="text-right">
-                        <a class="btn btn-success" id="btnsample" >See sample code</a>
+                        <a class="btn btn-success" id="btnSample">See Sample Code</a>
                     </div>
-
-          
-
-                   
-
-                   
-
+ 
+                    <hr>
                 </div>
 
             </div>
