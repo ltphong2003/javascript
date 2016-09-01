@@ -31,11 +31,12 @@
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if (xhttp.readyState == 4 && xhttp.status == 200) {
-				document.getElementById("noidungdebai").src = xhttp.responseText;
+				document.getElementById("noidungdebai").href = xhttp.responseText;
+				document.getElementById("noidungdebai").innerHTML = xhttp.responseText;
 			}
 	  }
 	  if (mb != ""){
-		xhttp.open("GET", "a.txt", true);
+		xhttp.open("GET", "get.php?mabai="+mb, true);
 		xhttp.send();
 	  }
 	}
@@ -91,7 +92,7 @@
                     <div class="caption-full">
                         <h4>Tieu de de o day
                         </h4>
-						<iframe src="http://www.w3schools.com" id="noidungdebai"></iframe>
+						<a href="" id="noidungdebai"></a>
                     </div>
                 </div>
 
